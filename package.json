@@ -1,12 +1,12 @@
 {
+  "name": "demo-element-in-docker",
   "version": "0.1.0",
   "license": "MIT",
+  "author": "gjgd",
   "scripts": {
-    "start": "docker-compose up -d && node dist/index.js",
+    "start": "node dist/index.js",
     "build": "tsdx build"
   },
-  "name": "sidetree-js-bug",
-  "author": "gjgd",
   "devDependencies": {
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",

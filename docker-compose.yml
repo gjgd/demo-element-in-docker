@@ -1,8 +1,15 @@
 version: '3'
 
 services:
+  element:
+    build: .
+    depends_on:
+      - ganache
+      - ipfs
+      - mongo
   ganache:
     image: trufflesuite/ganache-cli:latest
+    command: ganache-cli -h 0.0.0.0
     ports:
       - '8545:8545'
   ipfs:
@@ -16,3 +23,6 @@ services:
     restart: always
     ports:
      - '27017:27017'
+    # Disable logs for mongo
+    logging:
+      driver: none
