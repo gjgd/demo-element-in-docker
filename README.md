@@ -2,19 +2,10 @@
 
 Based on https://github.com/transmute-industries/sidetree.js/issues/154
 
-Shows how to initialize Element
+Shows how to initialize Element in Docker
 
-## Without docker
-
-```bash
-npm i
-npm run build
-npm start
-```
-
-## With docker
+Here we use docker-compose because we need mongo, ipfs and ganache running locally
 
 ```
-docker build . -t element-in-docker
-docker run --rm -it element-in-docker
+docker-compose up --build
 ```
