@@ -1,4 +1,3 @@
-/* eslint-disable id-match */
 import Web3 from 'web3'
 import { EthereumLedger } from '@sidetree/ethereum'
 import { IpfsCasWithCache } from '@sidetree/cas-ipfs'
