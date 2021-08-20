@@ -2,6 +2,7 @@ import Web3 from 'web3'
 import { EthereumLedger } from '@sidetree/ethereum'
 import { IpfsCasWithCache } from '@sidetree/cas-ipfs'
 import { Element } from '@sidetree/element'
+import { MongoDb } from '@sidetree/db';
 
 export interface ElementConfig {
   applicationWalletPrivateKey: string
@@ -37,6 +38,11 @@ export class DidElement {
 
   static initialize = async (config: ElementConfig, startObserver = false, startBatchWriter = false): Promise<Element> => {
     try {
+      await MongoDb.resetDatabase(
+        config.mongoDbConnectionString,
+        config.databaseName!
+      );
+      
       const cas = await DidElement.getCas(config)
       const ledger = await DidElement.getLedger(config)
 
